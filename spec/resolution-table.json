@@ -1,0 +1,248 @@
+{
+  "version": "1.0",
+  "max_resolution": 30,
+  "levels": [
+    {
+      "level": 0,
+      "triangle_count": "8",
+      "cumulative_count": "8",
+      "level_start": "1",
+      "level_end": "8",
+      "area_km2": "63758058.988724"
+    },
+    {
+      "level": 1,
+      "triangle_count": "32",
+      "cumulative_count": "40",
+      "level_start": "9",
+      "level_end": "40",
+      "area_km2": "13793858.153292"
+    },
+    {
+      "level": 2,
+      "triangle_count": "128",
+      "cumulative_count": "168",
+      "level_start": "41",
+      "level_end": "168",
+      "area_km2": "3210275.509376"
+    },
+    {
+      "level": 3,
+      "triangle_count": "512",
+      "cumulative_count": "680",
+      "level_start": "169",
+      "level_end": "680",
+      "area_km2": "787459.514964"
+    },
+    {
+      "level": 4,
+      "triangle_count": "2048",
+      "cumulative_count": "2728",
+      "level_start": "681",
+      "level_end": "2728",
+      "area_km2": "195921.544105"
+    },
+    {
+      "level": 5,
+      "triangle_count": "8192",
+      "cumulative_count": "10920",
+      "level_start": "2729",
+      "level_end": "10920",
+      "area_km2": "48921.458302"
+    },
+    {
+      "level": 6,
+      "triangle_count": "32768",
+      "cumulative_count": "43688",
+      "level_start": "10921",
+      "level_end": "43688",
+      "area_km2": "12226.682129"
+    },
+    {
+      "level": 7,
+      "triangle_count": "131072",
+      "cumulative_count": "174760",
+      "level_start": "43689",
+      "level_end": "174760",
+      "area_km2": "3056.440388"
+    },
+    {
+      "level": 8,
+      "triangle_count": "524288",
+      "cumulative_count": "699048",
+      "level_start": "174761",
+      "level_end": "699048",
+      "area_km2": "764.095713"
+    },
+    {
+      "level": 9,
+      "triangle_count": "2097152",
+      "cumulative_count": "2796200",
+      "level_start": "699049",
+      "level_end": "2796200",
+      "area_km2": "191.023029"
+    },
+    {
+      "level": 10,
+      "triangle_count": "8388608",
+      "cumulative_count": "11184808",
+      "level_start": "2796201",
+      "level_end": "11184808",
+      "area_km2": "47.755701"
+    },
+    {
+      "level": 11,
+      "triangle_count": "33554432",
+      "cumulative_count": "44739240",
+      "level_start": "11184809",
+      "level_end": "44739240",
+      "area_km2": "11.938922"
+    },
+    {
+      "level": 12,
+      "triangle_count": "134217728",
+      "cumulative_count": "178956968",
+      "level_start": "44739241",
+      "level_end": "178956968",
+      "area_km2": "2.98473"
+    },
+    {
+      "level": 13,
+      "triangle_count": "536870912",
+      "cumulative_count": "715827880",
+      "level_start": "178956969",
+      "level_end": "715827880",
+      "area_km2": "0.746183"
+    },
+    {
+      "level": 14,
+      "triangle_count": "2147483648",
+      "cumulative_count": "2863311528",
+      "level_start": "715827881",
+      "level_end": "2863311528",
+      "area_km2": "0.186546"
+    },
+    {
+      "level": 15,
+      "triangle_count": "8589934592",
+      "cumulative_count": "11453246120",
+      "level_start": "2863311529",
+      "level_end": "11453246120",
+      "area_km2": "0.046636"
+    },
+    {
+      "level": 16,
+      "triangle_count": "34359738368",
+      "cumulative_count": "45812984488",
+      "level_start": "11453246121",
+      "level_end": "45812984488",
+      "area_km2": "0.011659"
+    },
+    {
+      "level": 17,
+      "triangle_count": "137438953472",
+      "cumulative_count": "183251937960",
+      "level_start": "45812984489",
+      "level_end": "183251937960",
+      "area_km2": "0.002915"
+    },
+    {
+      "level": 18,
+      "triangle_count": "549755813888",
+      "cumulative_count": "733007751848",
+      "level_start": "183251937961",
+      "level_end": "733007751848",
+      "area_km2": "0.000729"
+    },
+    {
+      "level": 19,
+      "triangle_count": "2199023255552",
+      "cumulative_count": "2932031007400",
+      "level_start": "733007751849",
+      "level_end": "2932031007400",
+      "area_km2": "0.000182"
+    },
+    {
+      "level": 20,
+      "triangle_count": "8796093022208",
+      "cumulative_count": "11728124029608",
+      "level_start": "2932031007401",
+      "level_end": "11728124029608",
+      "area_km2": "4.6E-05"
+    },
+    {
+      "level": 21,
+      "triangle_count": "35184372088832",
+      "cumulative_count": "46912496118440",
+      "level_start": "11728124029609",
+      "level_end": "46912496118440",
+      "area_km2": "1.1E-05"
+    },
+    {
+      "level": 22,
+      "triangle_count": "140737488355328",
+      "cumulative_count": "187649984473768",
+      "level_start": "46912496118441",
+      "level_end": "187649984473768",
+      "area_km2": "3E-06"
+    },
+    {
+      "level": 23,
+      "triangle_count": "562949953421312",
+      "cumulative_count": "750599937895080",
+      "level_start": "187649984473769",
+      "level_end": "750599937895080",
+      "area_km2": "1E-06"
+    },
+    {
+      "level": 24,
+      "triangle_count": "2251799813685248",
+      "cumulative_count": "3002399751580328",
+      "level_start": "750599937895081",
+      "level_end": "3002399751580328",
+      "area_km2": "0"
+    },
+    {
+      "level": 25,
+      "triangle_count": "9007199254740992",
+      "cumulative_count": "12009599006321320",
+      "level_start": "3002399751580329",
+      "level_end": "12009599006321320"
+    },
+    {
+      "level": 26,
+      "triangle_count": "36028797018963968",
+      "cumulative_count": "48038396025285288",
+      "level_start": "12009599006321321",
+      "level_end": "48038396025285288"
+    },
+    {
+      "level": 27,
+      "triangle_count": "144115188075855872",
+      "cumulative_count": "192153584101141160",
+      "level_start": "48038396025285289",
+      "level_end": "192153584101141160"
+    },
+    {
+      "level": 28,
+      "triangle_count": "576460752303423488",
+      "cumulative_count": "768614336404564648",
+      "level_start": "192153584101141161",
+      "level_end": "768614336404564648"
+    },
+    {
+      "level": 29,
+      "triangle_count": "2305843009213693952",
+      "cumulative_count": "3074457345618258600",
+      "level_start": "768614336404564649",
+      "level_end": "3074457345618258600"
+    },
+    {
+      "level": 30,
+      "triangle_count": "9223372036854775808",
+      "cumulative_count": "12297829382473034408",
+      "level_start": "3074457345618258601",
+      "level_end": "12297829382473034408"
+    }
+  ]
+}

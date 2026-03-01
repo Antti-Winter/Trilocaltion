@@ -1,0 +1,2789 @@
+{
+  "version": "1.0",
+  "generator": "Trilocation C# Reference Implementation v0.1.0",
+  "statistics": {
+    "level_boundaries": 31,
+    "parent_child": 48,
+    "base_faces": 8,
+    "coordinate_conversions": 153,
+    "neighbors": 18,
+    "containment": 10,
+    "total": 268
+  },
+  "level_boundaries": [
+    {
+      "level": 0,
+      "start": "1",
+      "end": "8",
+      "count": "8",
+      "cumulative": "8"
+    },
+    {
+      "level": 1,
+      "start": "9",
+      "end": "40",
+      "count": "32",
+      "cumulative": "40"
+    },
+    {
+      "level": 2,
+      "start": "41",
+      "end": "168",
+      "count": "128",
+      "cumulative": "168"
+    },
+    {
+      "level": 3,
+      "start": "169",
+      "end": "680",
+      "count": "512",
+      "cumulative": "680"
+    },
+    {
+      "level": 4,
+      "start": "681",
+      "end": "2728",
+      "count": "2048",
+      "cumulative": "2728"
+    },
+    {
+      "level": 5,
+      "start": "2729",
+      "end": "10920",
+      "count": "8192",
+      "cumulative": "10920"
+    },
+    {
+      "level": 6,
+      "start": "10921",
+      "end": "43688",
+      "count": "32768",
+      "cumulative": "43688"
+    },
+    {
+      "level": 7,
+      "start": "43689",
+      "end": "174760",
+      "count": "131072",
+      "cumulative": "174760"
+    },
+    {
+      "level": 8,
+      "start": "174761",
+      "end": "699048",
+      "count": "524288",
+      "cumulative": "699048"
+    },
+    {
+      "level": 9,
+      "start": "699049",
+      "end": "2796200",
+      "count": "2097152",
+      "cumulative": "2796200"
+    },
+    {
+      "level": 10,
+      "start": "2796201",
+      "end": "11184808",
+      "count": "8388608",
+      "cumulative": "11184808"
+    },
+    {
+      "level": 11,
+      "start": "11184809",
+      "end": "44739240",
+      "count": "33554432",
+      "cumulative": "44739240"
+    },
+    {
+      "level": 12,
+      "start": "44739241",
+      "end": "178956968",
+      "count": "134217728",
+      "cumulative": "178956968"
+    },
+    {
+      "level": 13,
+      "start": "178956969",
+      "end": "715827880",
+      "count": "536870912",
+      "cumulative": "715827880"
+    },
+    {
+      "level": 14,
+      "start": "715827881",
+      "end": "2863311528",
+      "count": "2147483648",
+      "cumulative": "2863311528"
+    },
+    {
+      "level": 15,
+      "start": "2863311529",
+      "end": "11453246120",
+      "count": "8589934592",
+      "cumulative": "11453246120"
+    },
+    {
+      "level": 16,
+      "start": "11453246121",
+      "end": "45812984488",
+      "count": "34359738368",
+      "cumulative": "45812984488"
+    },
+    {
+      "level": 17,
+      "start": "45812984489",
+      "end": "183251937960",
+      "count": "137438953472",
+      "cumulative": "183251937960"
+    },
+    {
+      "level": 18,
+      "start": "183251937961",
+      "end": "733007751848",
+      "count": "549755813888",
+      "cumulative": "733007751848"
+    },
+    {
+      "level": 19,
+      "start": "733007751849",
+      "end": "2932031007400",
+      "count": "2199023255552",
+      "cumulative": "2932031007400"
+    },
+    {
+      "level": 20,
+      "start": "2932031007401",
+      "end": "11728124029608",
+      "count": "8796093022208",
+      "cumulative": "11728124029608"
+    },
+    {
+      "level": 21,
+      "start": "11728124029609",
+      "end": "46912496118440",
+      "count": "35184372088832",
+      "cumulative": "46912496118440"
+    },
+    {
+      "level": 22,
+      "start": "46912496118441",
+      "end": "187649984473768",
+      "count": "140737488355328",
+      "cumulative": "187649984473768"
+    },
+    {
+      "level": 23,
+      "start": "187649984473769",
+      "end": "750599937895080",
+      "count": "562949953421312",
+      "cumulative": "750599937895080"
+    },
+    {
+      "level": 24,
+      "start": "750599937895081",
+      "end": "3002399751580328",
+      "count": "2251799813685248",
+      "cumulative": "3002399751580328"
+    },
+    {
+      "level": 25,
+      "start": "3002399751580329",
+      "end": "12009599006321320",
+      "count": "9007199254740992",
+      "cumulative": "12009599006321320"
+    },
+    {
+      "level": 26,
+      "start": "12009599006321321",
+      "end": "48038396025285288",
+      "count": "36028797018963968",
+      "cumulative": "48038396025285288"
+    },
+    {
+      "level": 27,
+      "start": "48038396025285289",
+      "end": "192153584101141160",
+      "count": "144115188075855872",
+      "cumulative": "192153584101141160"
+    },
+    {
+      "level": 28,
+      "start": "192153584101141161",
+      "end": "768614336404564648",
+      "count": "576460752303423488",
+      "cumulative": "768614336404564648"
+    },
+    {
+      "level": 29,
+      "start": "768614336404564649",
+      "end": "3074457345618258600",
+      "count": "2305843009213693952",
+      "cumulative": "3074457345618258600"
+    },
+    {
+      "level": 30,
+      "start": "3074457345618258601",
+      "end": "12297829382473034408",
+      "count": "9223372036854775808",
+      "cumulative": "12297829382473034408"
+    }
+  ],
+  "parent_child": [
+    {
+      "index": "1",
+      "resolution": 0,
+      "base_face": 0,
+      "children": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ]
+    },
+    {
+      "index": "2",
+      "resolution": 0,
+      "base_face": 1,
+      "children": [
+        "13",
+        "14",
+        "15",
+        "16"
+      ]
+    },
+    {
+      "index": "3",
+      "resolution": 0,
+      "base_face": 2,
+      "children": [
+        "17",
+        "18",
+        "19",
+        "20"
+      ]
+    },
+    {
+      "index": "4",
+      "resolution": 0,
+      "base_face": 3,
+      "children": [
+        "21",
+        "22",
+        "23",
+        "24"
+      ]
+    },
+    {
+      "index": "5",
+      "resolution": 0,
+      "base_face": 4,
+      "children": [
+        "25",
+        "26",
+        "27",
+        "28"
+      ]
+    },
+    {
+      "index": "6",
+      "resolution": 0,
+      "base_face": 5,
+      "children": [
+        "29",
+        "30",
+        "31",
+        "32"
+      ]
+    },
+    {
+      "index": "7",
+      "resolution": 0,
+      "base_face": 6,
+      "children": [
+        "33",
+        "34",
+        "35",
+        "36"
+      ]
+    },
+    {
+      "index": "8",
+      "resolution": 0,
+      "base_face": 7,
+      "children": [
+        "37",
+        "38",
+        "39",
+        "40"
+      ]
+    },
+    {
+      "index": "9",
+      "resolution": 1,
+      "base_face": 0,
+      "parent": "1",
+      "child_position": 0,
+      "children": [
+        "41",
+        "42",
+        "43",
+        "44"
+      ]
+    },
+    {
+      "index": "10",
+      "resolution": 1,
+      "base_face": 0,
+      "parent": "1",
+      "child_position": 1,
+      "children": [
+        "45",
+        "46",
+        "47",
+        "48"
+      ]
+    },
+    {
+      "index": "11",
+      "resolution": 1,
+      "base_face": 0,
+      "parent": "1",
+      "child_position": 2,
+      "children": [
+        "49",
+        "50",
+        "51",
+        "52"
+      ]
+    },
+    {
+      "index": "12",
+      "resolution": 1,
+      "base_face": 0,
+      "parent": "1",
+      "child_position": 3,
+      "children": [
+        "53",
+        "54",
+        "55",
+        "56"
+      ]
+    },
+    {
+      "index": "41",
+      "resolution": 2,
+      "base_face": 0,
+      "parent": "9",
+      "children": [
+        "169",
+        "170",
+        "171",
+        "172"
+      ]
+    },
+    {
+      "index": "105",
+      "resolution": 2,
+      "base_face": 4,
+      "parent": "25",
+      "children": [
+        "425",
+        "426",
+        "427",
+        "428"
+      ]
+    },
+    {
+      "index": "49",
+      "resolution": 2,
+      "base_face": 0,
+      "parent": "11",
+      "children": [
+        "201",
+        "202",
+        "203",
+        "204"
+      ]
+    },
+    {
+      "index": "168",
+      "resolution": 2,
+      "base_face": 7,
+      "parent": "40",
+      "children": [
+        "677",
+        "678",
+        "679",
+        "680"
+      ]
+    },
+    {
+      "index": "169",
+      "resolution": 3,
+      "base_face": 0,
+      "parent": "41",
+      "children": [
+        "681",
+        "682",
+        "683",
+        "684"
+      ]
+    },
+    {
+      "index": "425",
+      "resolution": 3,
+      "base_face": 4,
+      "parent": "105",
+      "children": [
+        "1705",
+        "1706",
+        "1707",
+        "1708"
+      ]
+    },
+    {
+      "index": "201",
+      "resolution": 3,
+      "base_face": 0,
+      "parent": "49",
+      "children": [
+        "809",
+        "810",
+        "811",
+        "812"
+      ]
+    },
+    {
+      "index": "680",
+      "resolution": 3,
+      "base_face": 7,
+      "parent": "168",
+      "children": [
+        "2725",
+        "2726",
+        "2727",
+        "2728"
+      ]
+    },
+    {
+      "index": "2729",
+      "resolution": 5,
+      "base_face": 0,
+      "parent": "681",
+      "children": [
+        "10921",
+        "10922",
+        "10923",
+        "10924"
+      ]
+    },
+    {
+      "index": "6825",
+      "resolution": 5,
+      "base_face": 4,
+      "parent": "1705",
+      "children": [
+        "27305",
+        "27306",
+        "27307",
+        "27308"
+      ]
+    },
+    {
+      "index": "3241",
+      "resolution": 5,
+      "base_face": 0,
+      "parent": "809",
+      "children": [
+        "12969",
+        "12970",
+        "12971",
+        "12972"
+      ]
+    },
+    {
+      "index": "10920",
+      "resolution": 5,
+      "base_face": 7,
+      "parent": "2728",
+      "children": [
+        "43685",
+        "43686",
+        "43687",
+        "43688"
+      ]
+    },
+    {
+      "index": "174761",
+      "resolution": 8,
+      "base_face": 0,
+      "parent": "43689",
+      "children": [
+        "699049",
+        "699050",
+        "699051",
+        "699052"
+      ]
+    },
+    {
+      "index": "436905",
+      "resolution": 8,
+      "base_face": 4,
+      "parent": "109225",
+      "children": [
+        "1747625",
+        "1747626",
+        "1747627",
+        "1747628"
+      ]
+    },
+    {
+      "index": "207529",
+      "resolution": 8,
+      "base_face": 0,
+      "parent": "51881",
+      "children": [
+        "830121",
+        "830122",
+        "830123",
+        "830124"
+      ]
+    },
+    {
+      "index": "699048",
+      "resolution": 8,
+      "base_face": 7,
+      "parent": "174760",
+      "children": [
+        "2796197",
+        "2796198",
+        "2796199",
+        "2796200"
+      ]
+    },
+    {
+      "index": "2796201",
+      "resolution": 10,
+      "base_face": 0,
+      "parent": "699049",
+      "children": [
+        "11184809",
+        "11184810",
+        "11184811",
+        "11184812"
+      ]
+    },
+    {
+      "index": "6990505",
+      "resolution": 10,
+      "base_face": 4,
+      "parent": "1747625",
+      "children": [
+        "27962025",
+        "27962026",
+        "27962027",
+        "27962028"
+      ]
+    },
+    {
+      "index": "3320489",
+      "resolution": 10,
+      "base_face": 0,
+      "parent": "830121",
+      "children": [
+        "13281961",
+        "13281962",
+        "13281963",
+        "13281964"
+      ]
+    },
+    {
+      "index": "11184808",
+      "resolution": 10,
+      "base_face": 7,
+      "parent": "2796200",
+      "children": [
+        "44739237",
+        "44739238",
+        "44739239",
+        "44739240"
+      ]
+    },
+    {
+      "index": "2863311529",
+      "resolution": 15,
+      "base_face": 0,
+      "parent": "715827881",
+      "children": [
+        "11453246121",
+        "11453246122",
+        "11453246123",
+        "11453246124"
+      ]
+    },
+    {
+      "index": "7158278825",
+      "resolution": 15,
+      "base_face": 4,
+      "parent": "1789569705",
+      "children": [
+        "28633115305",
+        "28633115306",
+        "28633115307",
+        "28633115308"
+      ]
+    },
+    {
+      "index": "3400182441",
+      "resolution": 15,
+      "base_face": 0,
+      "parent": "850045609",
+      "children": [
+        "13600729769",
+        "13600729770",
+        "13600729771",
+        "13600729772"
+      ]
+    },
+    {
+      "index": "11453246120",
+      "resolution": 15,
+      "base_face": 7,
+      "parent": "2863311528",
+      "children": [
+        "45812984485",
+        "45812984486",
+        "45812984487",
+        "45812984488"
+      ]
+    },
+    {
+      "index": "2932031007401",
+      "resolution": 20,
+      "base_face": 0,
+      "parent": "733007751849",
+      "children": [
+        "11728124029609",
+        "11728124029610",
+        "11728124029611",
+        "11728124029612"
+      ]
+    },
+    {
+      "index": "7330077518505",
+      "resolution": 20,
+      "base_face": 4,
+      "parent": "1832519379625",
+      "children": [
+        "29320310074025",
+        "29320310074026",
+        "29320310074027",
+        "29320310074028"
+      ]
+    },
+    {
+      "index": "3481786821289",
+      "resolution": 20,
+      "base_face": 0,
+      "parent": "870446705321",
+      "children": [
+        "13927147285161",
+        "13927147285162",
+        "13927147285163",
+        "13927147285164"
+      ]
+    },
+    {
+      "index": "11728124029608",
+      "resolution": 20,
+      "base_face": 7,
+      "parent": "2932031007400",
+      "children": [
+        "46912496118437",
+        "46912496118438",
+        "46912496118439",
+        "46912496118440"
+      ]
+    },
+    {
+      "index": "750599937895081",
+      "resolution": 24,
+      "base_face": 0,
+      "parent": "187649984473769",
+      "children": [
+        "3002399751580329",
+        "3002399751580330",
+        "3002399751580331",
+        "3002399751580332"
+      ]
+    },
+    {
+      "index": "1876499844737705",
+      "resolution": 24,
+      "base_face": 4,
+      "parent": "469124961184425",
+      "children": [
+        "7505999378950825",
+        "7505999378950826",
+        "7505999378950827",
+        "7505999378950828"
+      ]
+    },
+    {
+      "index": "891337426250409",
+      "resolution": 24,
+      "base_face": 0,
+      "parent": "222834356562601",
+      "children": [
+        "3565349705001641",
+        "3565349705001642",
+        "3565349705001643",
+        "3565349705001644"
+      ]
+    },
+    {
+      "index": "3002399751580328",
+      "resolution": 24,
+      "base_face": 7,
+      "parent": "750599937895080",
+      "children": [
+        "12009599006321317",
+        "12009599006321318",
+        "12009599006321319",
+        "12009599006321320"
+      ]
+    },
+    {
+      "index": "3074457345618258601",
+      "resolution": 30,
+      "base_face": 0,
+      "parent": "768614336404564649"
+    },
+    {
+      "index": "7686143364045646505",
+      "resolution": 30,
+      "base_face": 4,
+      "parent": "1921535841011411625"
+    },
+    {
+      "index": "3650918097921682089",
+      "resolution": 30,
+      "base_face": 0,
+      "parent": "912729524480420521"
+    },
+    {
+      "index": "12297829382473034408",
+      "resolution": 30,
+      "base_face": 7,
+      "parent": "3074457345618258600"
+    }
+  ],
+  "base_faces": [
+    {
+      "face": 0,
+      "index": "1",
+      "centroid_lat": "35.2643896828",
+      "centroid_lon": "45",
+      "vertex_a_lat": "90",
+      "vertex_a_lon": "0",
+      "vertex_b_lat": "0",
+      "vertex_b_lon": "0",
+      "vertex_c_lat": "0",
+      "vertex_c_lon": "90",
+      "area_km2": "63758058.99"
+    },
+    {
+      "face": 1,
+      "index": "2",
+      "centroid_lat": "35.2643896828",
+      "centroid_lon": "135",
+      "vertex_a_lat": "90",
+      "vertex_a_lon": "0",
+      "vertex_b_lat": "0",
+      "vertex_b_lon": "90",
+      "vertex_c_lat": "0",
+      "vertex_c_lon": "180",
+      "area_km2": "63758058.99"
+    },
+    {
+      "face": 2,
+      "index": "3",
+      "centroid_lat": "35.2643896828",
+      "centroid_lon": "-135",
+      "vertex_a_lat": "90",
+      "vertex_a_lon": "0",
+      "vertex_b_lat": "0",
+      "vertex_b_lon": "180",
+      "vertex_c_lat": "0",
+      "vertex_c_lon": "-90",
+      "area_km2": "63758058.99"
+    },
+    {
+      "face": 3,
+      "index": "4",
+      "centroid_lat": "35.2643896828",
+      "centroid_lon": "-45",
+      "vertex_a_lat": "90",
+      "vertex_a_lon": "0",
+      "vertex_b_lat": "0",
+      "vertex_b_lon": "-90",
+      "vertex_c_lat": "0",
+      "vertex_c_lon": "0",
+      "area_km2": "63758058.99"
+    },
+    {
+      "face": 4,
+      "index": "5",
+      "centroid_lat": "-35.2643896828",
+      "centroid_lon": "45",
+      "vertex_a_lat": "-90",
+      "vertex_a_lon": "0",
+      "vertex_b_lat": "0",
+      "vertex_b_lon": "90",
+      "vertex_c_lat": "0",
+      "vertex_c_lon": "0",
+      "area_km2": "63758058.99"
+    },
+    {
+      "face": 5,
+      "index": "6",
+      "centroid_lat": "-35.2643896828",
+      "centroid_lon": "135",
+      "vertex_a_lat": "-90",
+      "vertex_a_lon": "0",
+      "vertex_b_lat": "0",
+      "vertex_b_lon": "180",
+      "vertex_c_lat": "0",
+      "vertex_c_lon": "90",
+      "area_km2": "63758058.99"
+    },
+    {
+      "face": 6,
+      "index": "7",
+      "centroid_lat": "-35.2643896828",
+      "centroid_lon": "-135",
+      "vertex_a_lat": "-90",
+      "vertex_a_lon": "0",
+      "vertex_b_lat": "0",
+      "vertex_b_lon": "-90",
+      "vertex_c_lat": "0",
+      "vertex_c_lon": "180",
+      "area_km2": "63758058.99"
+    },
+    {
+      "face": 7,
+      "index": "8",
+      "centroid_lat": "-35.2643896828",
+      "centroid_lon": "-45",
+      "vertex_a_lat": "-90",
+      "vertex_a_lon": "0",
+      "vertex_b_lat": "0",
+      "vertex_b_lon": "0",
+      "vertex_c_lat": "0",
+      "vertex_c_lon": "-90",
+      "area_km2": "63758058.99"
+    }
+  ],
+  "coordinate_conversions": [
+    {
+      "name": "Helsinki",
+      "input_lat": "60.1699",
+      "input_lon": "24.9384",
+      "resolution": 5,
+      "expected_index": "2845",
+      "centroid_lat": "58.9698864749",
+      "centroid_lon": "22.0358821038",
+      "base_face": 0
+    },
+    {
+      "name": "Helsinki",
+      "input_lat": "60.1699",
+      "input_lon": "24.9384",
+      "resolution": 10,
+      "expected_index": "2915328",
+      "centroid_lat": "60.1642262792",
+      "centroid_lon": "24.8675274577",
+      "base_face": 0
+    },
+    {
+      "name": "Helsinki",
+      "input_lat": "60.1699",
+      "input_lon": "24.9384",
+      "resolution": 15,
+      "expected_index": "2985298127",
+      "centroid_lat": "60.1687893473",
+      "centroid_lon": "24.9395060163",
+      "base_face": 0
+    },
+    {
+      "name": "Helsinki",
+      "input_lat": "60.1699",
+      "input_lon": "24.9384",
+      "resolution": 20,
+      "expected_index": "3056945283811",
+      "centroid_lat": "60.1698727759",
+      "centroid_lon": "24.9383183235",
+      "base_face": 0
+    },
+    {
+      "name": "Helsinki",
+      "input_lat": "60.1699",
+      "input_lon": "24.9384",
+      "resolution": 24,
+      "expected_index": "782577992656122",
+      "centroid_lat": "60.16989795",
+      "centroid_lon": "24.9384001481",
+      "base_face": 0
+    },
+    {
+      "name": "London",
+      "input_lat": "51.5074",
+      "input_lon": "-0.1278",
+      "resolution": 5,
+      "expected_index": "5963",
+      "centroid_lat": "52.283689059",
+      "centroid_lon": "-1.6638430358",
+      "base_face": 3
+    },
+    {
+      "name": "London",
+      "input_lat": "51.5074",
+      "input_lon": "-0.1278",
+      "resolution": 10,
+      "expected_index": "6108374",
+      "centroid_lat": "51.5203499138",
+      "centroid_lon": "-0.1022376804",
+      "base_face": 3
+    },
+    {
+      "name": "London",
+      "input_lat": "51.5074",
+      "input_lon": "-0.1278",
+      "resolution": 15,
+      "expected_index": "6254976880",
+      "centroid_lat": "51.5079673552",
+      "centroid_lon": "-0.1277624404",
+      "base_face": 3
+    },
+    {
+      "name": "London",
+      "input_lat": "51.5074",
+      "input_lon": "-0.1278",
+      "resolution": 20,
+      "expected_index": "6405096326925",
+      "centroid_lat": "51.5074174493",
+      "centroid_lon": "-0.1278108064",
+      "base_face": 3
+    },
+    {
+      "name": "London",
+      "input_lat": "51.5074",
+      "input_lon": "-0.1278",
+      "resolution": 24,
+      "expected_index": "1639704659693453",
+      "centroid_lat": "51.5074089028",
+      "centroid_lon": "-0.1278076633",
+      "base_face": 3
+    },
+    {
+      "name": "Tokyo",
+      "input_lat": "35.6762",
+      "input_lon": "139.6503",
+      "resolution": 5,
+      "expected_index": "4765",
+      "centroid_lat": "35.1395516214",
+      "centroid_lon": "140.3451346273",
+      "base_face": 1
+    },
+    {
+      "name": "Tokyo",
+      "input_lat": "35.6762",
+      "input_lon": "139.6503",
+      "resolution": 10,
+      "expected_index": "4881643",
+      "centroid_lat": "35.6850207363",
+      "centroid_lon": "139.6256621076",
+      "base_face": 1
+    },
+    {
+      "name": "Tokyo",
+      "input_lat": "35.6762",
+      "input_lon": "139.6503",
+      "resolution": 15,
+      "expected_index": "4998805088",
+      "centroid_lat": "35.6765268804",
+      "centroid_lon": "139.6513479854",
+      "base_face": 1
+    },
+    {
+      "name": "Tokyo",
+      "input_lat": "35.6762",
+      "input_lon": "139.6503",
+      "resolution": 20,
+      "expected_index": "5118776412290",
+      "centroid_lat": "35.6762274853",
+      "centroid_lon": "139.6502698573",
+      "base_face": 1
+    },
+    {
+      "name": "Tokyo",
+      "input_lat": "35.6762",
+      "input_lon": "139.6503",
+      "resolution": 24,
+      "expected_index": "1310406761546685",
+      "centroid_lat": "35.676197386",
+      "centroid_lon": "139.650298869",
+      "base_face": 1
+    },
+    {
+      "name": "New York",
+      "input_lat": "40.7128",
+      "input_lon": "-74.006",
+      "resolution": 5,
+      "expected_index": "6730",
+      "centroid_lat": "41.7828379512",
+      "centroid_lon": "-74.7658038512",
+      "base_face": 3
+    },
+    {
+      "name": "New York",
+      "input_lat": "40.7128",
+      "input_lon": "-74.006",
+      "resolution": 10,
+      "expected_index": "6893451",
+      "centroid_lat": "40.7167962515",
+      "centroid_lon": "-73.9925953083",
+      "base_face": 3
+    },
+    {
+      "name": "New York",
+      "input_lat": "40.7128",
+      "input_lon": "-74.006",
+      "resolution": 15,
+      "expected_index": "7058896429",
+      "centroid_lat": "40.7123373439",
+      "centroid_lon": "-74.0059727231",
+      "base_face": 3
+    },
+    {
+      "name": "New York",
+      "input_lat": "40.7128",
+      "input_lon": "-74.006",
+      "resolution": 20,
+      "expected_index": "7228309945805",
+      "centroid_lat": "40.7128053667",
+      "centroid_lon": "-74.0059768439",
+      "base_face": 3
+    },
+    {
+      "name": "New York",
+      "input_lat": "40.7128",
+      "input_lon": "-74.006",
+      "resolution": 24,
+      "expected_index": "1850447346126729",
+      "centroid_lat": "40.7127951685",
+      "centroid_lon": "-74.005992767",
+      "base_face": 3
+    },
+    {
+      "name": "Sydney",
+      "input_lat": "-33.8688",
+      "input_lon": "151.2093",
+      "resolution": 5,
+      "expected_index": "8749",
+      "centroid_lat": "-34.2905601819",
+      "centroid_lon": "150.4951857791",
+      "base_face": 5
+    },
+    {
+      "name": "Sydney",
+      "input_lat": "-33.8688",
+      "input_lon": "151.2093",
+      "resolution": 10,
+      "expected_index": "8961569",
+      "centroid_lat": "-33.8565728946",
+      "centroid_lon": "151.1628709927",
+      "base_face": 5
+    },
+    {
+      "name": "Sydney",
+      "input_lat": "-33.8688",
+      "input_lon": "151.2093",
+      "resolution": 15,
+      "expected_index": "9176649123",
+      "centroid_lat": "-33.8692912731",
+      "centroid_lon": "151.2080376093",
+      "base_face": 5
+    },
+    {
+      "name": "Sydney",
+      "input_lat": "-33.8688",
+      "input_lon": "151.2093",
+      "resolution": 20,
+      "expected_index": "9396888704179",
+      "centroid_lat": "-33.8688420172",
+      "centroid_lon": "151.2093234051",
+      "base_face": 5
+    },
+    {
+      "name": "Sydney",
+      "input_lat": "-33.8688",
+      "input_lon": "151.2093",
+      "resolution": 24,
+      "expected_index": "2405603508270254",
+      "centroid_lat": "-33.8687984208",
+      "centroid_lon": "151.2093035737",
+      "base_face": 5
+    },
+    {
+      "name": "Cape Town",
+      "input_lat": "-33.9249",
+      "input_lon": "18.4241",
+      "resolution": 5,
+      "expected_index": "7662",
+      "centroid_lat": "-34.8461404707",
+      "centroid_lon": "17.5286115376",
+      "base_face": 4
+    },
+    {
+      "name": "Cape Town",
+      "input_lat": "-33.9249",
+      "input_lon": "18.4241",
+      "resolution": 10,
+      "expected_index": "7847736",
+      "centroid_lat": "-33.8795528425",
+      "centroid_lon": "18.3857028078",
+      "base_face": 4
+    },
+    {
+      "name": "Cape Town",
+      "input_lat": "-33.9249",
+      "input_lon": "18.4241",
+      "resolution": 15,
+      "expected_index": "8036084033",
+      "centroid_lat": "-33.9252215682",
+      "centroid_lon": "18.4243318453",
+      "base_face": 4
+    },
+    {
+      "name": "Cape Town",
+      "input_lat": "-33.9249",
+      "input_lon": "18.4241",
+      "resolution": 20,
+      "expected_index": "8228950052409",
+      "centroid_lat": "-33.924930534",
+      "centroid_lon": "18.4241206106",
+      "base_face": 4
+    },
+    {
+      "name": "Cape Town",
+      "input_lat": "-33.9249",
+      "input_lon": "18.4241",
+      "resolution": 24,
+      "expected_index": "2106611213417275",
+      "centroid_lat": "-33.9249045396",
+      "centroid_lon": "18.4241049706",
+      "base_face": 4
+    },
+    {
+      "name": "Sao Paulo",
+      "input_lat": "-23.5505",
+      "input_lon": "-46.6333",
+      "resolution": 5,
+      "expected_index": "10691",
+      "centroid_lat": "-24.1541941481",
+      "centroid_lon": "-47.324397752",
+      "base_face": 7
+    },
+    {
+      "name": "Sao Paulo",
+      "input_lat": "-23.5505",
+      "input_lon": "-46.6333",
+      "resolution": 10,
+      "expected_index": "10949456",
+      "centroid_lat": "-23.5636844947",
+      "centroid_lon": "-46.612458644",
+      "base_face": 7
+    },
+    {
+      "name": "Sao Paulo",
+      "input_lat": "-23.5505",
+      "input_lon": "-46.6333",
+      "resolution": 15,
+      "expected_index": "11212245227",
+      "centroid_lat": "-23.5499176463",
+      "centroid_lon": "-46.6327191312",
+      "base_face": 7
+    },
+    {
+      "name": "Sao Paulo",
+      "input_lat": "-23.5505",
+      "input_lon": "-46.6333",
+      "resolution": 20,
+      "expected_index": "11481339114329",
+      "centroid_lat": "-23.5504970762",
+      "centroid_lon": "-46.6332716575",
+      "base_face": 7
+    },
+    {
+      "name": "Sao Paulo",
+      "input_lat": "-23.5505",
+      "input_lon": "-46.6333",
+      "resolution": 24,
+      "expected_index": "2939222813268721",
+      "centroid_lat": "-23.5504967773",
+      "centroid_lon": "-46.6332978485",
+      "base_face": 7
+    },
+    {
+      "name": "Moscow",
+      "input_lat": "55.7558",
+      "input_lon": "37.6173",
+      "resolution": 5,
+      "expected_index": "2836",
+      "centroid_lat": "56.0856883669",
+      "centroid_lon": "38.118325889",
+      "base_face": 0
+    },
+    {
+      "name": "Moscow",
+      "input_lat": "55.7558",
+      "input_lon": "37.6173",
+      "resolution": 10,
+      "expected_index": "2906637",
+      "centroid_lat": "55.7644542567",
+      "centroid_lon": "37.5740445933",
+      "base_face": 0
+    },
+    {
+      "name": "Moscow",
+      "input_lat": "55.7558",
+      "input_lon": "37.6173",
+      "resolution": 15,
+      "expected_index": "2976398730",
+      "centroid_lat": "55.7558231753",
+      "centroid_lon": "37.6193650962",
+      "base_face": 0
+    },
+    {
+      "name": "Moscow",
+      "input_lat": "55.7558",
+      "input_lon": "37.6173",
+      "resolution": 20,
+      "expected_index": "3047832301784",
+      "centroid_lat": "55.7557956285",
+      "centroid_lon": "37.6173139294",
+      "base_face": 0
+    },
+    {
+      "name": "Moscow",
+      "input_lat": "55.7558",
+      "input_lon": "37.6173",
+      "resolution": 24,
+      "expected_index": "780245069257326",
+      "centroid_lat": "55.7558017544",
+      "centroid_lon": "37.6172928655",
+      "base_face": 0
+    },
+    {
+      "name": "Dubai",
+      "input_lat": "25.2048",
+      "input_lon": "55.2708",
+      "resolution": 5,
+      "expected_index": "3730",
+      "centroid_lat": "26.0254343826",
+      "centroid_lon": "56.746285283",
+      "base_face": 0
+    },
+    {
+      "name": "Dubai",
+      "input_lat": "25.2048",
+      "input_lon": "55.2708",
+      "resolution": 10,
+      "expected_index": "3821681",
+      "centroid_lat": "25.1938551238",
+      "centroid_lon": "55.3107705129",
+      "base_face": 0
+    },
+    {
+      "name": "Dubai",
+      "input_lat": "25.2048",
+      "input_lon": "55.2708",
+      "resolution": 15,
+      "expected_index": "3913403600",
+      "centroid_lat": "25.2039170667",
+      "centroid_lon": "55.2711126227",
+      "base_face": 0
+    },
+    {
+      "name": "Dubai",
+      "input_lat": "25.2048",
+      "input_lon": "55.2708",
+      "resolution": 20,
+      "expected_index": "4007325288221",
+      "centroid_lat": "25.2048529701",
+      "centroid_lon": "55.2708110968",
+      "base_face": 0
+    },
+    {
+      "name": "Dubai",
+      "input_lat": "25.2048",
+      "input_lon": "55.2708",
+      "resolution": 24,
+      "expected_index": "1025875273785009",
+      "centroid_lat": "25.2047969092",
+      "centroid_lon": "55.2707946684",
+      "base_face": 0
+    },
+    {
+      "name": "Singapore",
+      "input_lat": "1.3521",
+      "input_lon": "103.8198",
+      "resolution": 5,
+      "expected_index": "4112",
+      "centroid_lat": "1.9123713564",
+      "centroid_lon": "103.2019982013",
+      "base_face": 1
+    },
+    {
+      "name": "Singapore",
+      "input_lat": "1.3521",
+      "input_lon": "103.8198",
+      "resolution": 10,
+      "expected_index": "4212505",
+      "centroid_lat": "1.3746629522",
+      "centroid_lon": "103.7963168875",
+      "base_face": 1
+    },
+    {
+      "name": "Singapore",
+      "input_lat": "1.3521",
+      "input_lon": "103.8198",
+      "resolution": 15,
+      "expected_index": "4313607453",
+      "centroid_lat": "1.3522632466",
+      "centroid_lon": "103.8201602022",
+      "base_face": 1
+    },
+    {
+      "name": "Singapore",
+      "input_lat": "1.3521",
+      "input_lon": "103.8198",
+      "resolution": 20,
+      "expected_index": "4417134034468",
+      "centroid_lat": "1.3520878815",
+      "centroid_lon": "103.8198090304",
+      "base_face": 1
+    },
+    {
+      "name": "Singapore",
+      "input_lat": "1.3521",
+      "input_lon": "103.8198",
+      "resolution": 24,
+      "expected_index": "1130786312824461",
+      "centroid_lat": "1.3520951725",
+      "centroid_lon": "103.8198003733",
+      "base_face": 1
+    },
+    {
+      "name": "Cairo",
+      "input_lat": "30.0444",
+      "input_lon": "31.2357",
+      "resolution": 5,
+      "expected_index": "3709",
+      "centroid_lat": "29.5211406612",
+      "centroid_lon": "30.2804253911",
+      "base_face": 0
+    },
+    {
+      "name": "Cairo",
+      "input_lat": "30.0444",
+      "input_lon": "31.2357",
+      "resolution": 10,
+      "expected_index": "3800573",
+      "centroid_lat": "30.0789473085",
+      "centroid_lon": "31.2529754325",
+      "base_face": 0
+    },
+    {
+      "name": "Cairo",
+      "input_lat": "30.0444",
+      "input_lon": "31.2357",
+      "resolution": 15,
+      "expected_index": "3891788640",
+      "centroid_lat": "30.0456245679",
+      "centroid_lon": "31.2347806486",
+      "base_face": 0
+    },
+    {
+      "name": "Cairo",
+      "input_lat": "30.0444",
+      "input_lon": "31.2357",
+      "resolution": 20,
+      "expected_index": "3985191569130",
+      "centroid_lat": "30.0443679036",
+      "centroid_lon": "31.2356722683",
+      "base_face": 0
+    },
+    {
+      "name": "Cairo",
+      "input_lat": "30.0444",
+      "input_lon": "31.2357",
+      "resolution": 24,
+      "expected_index": "1020209041697817",
+      "centroid_lat": "30.0444040063",
+      "centroid_lon": "31.235703454",
+      "base_face": 0
+    },
+    {
+      "name": "Mumbai",
+      "input_lat": "19.076",
+      "input_lon": "72.8777",
+      "resolution": 5,
+      "expected_index": "3482",
+      "centroid_lat": "18.9733326037",
+      "centroid_lon": "73.0336707118",
+      "base_face": 0
+    },
+    {
+      "name": "Mumbai",
+      "input_lat": "19.076",
+      "input_lon": "72.8777",
+      "resolution": 10,
+      "expected_index": "3568249",
+      "centroid_lat": "19.0464838049",
+      "centroid_lon": "72.8510951868",
+      "base_face": 0
+    },
+    {
+      "name": "Mumbai",
+      "input_lat": "19.076",
+      "input_lon": "72.8777",
+      "resolution": 15,
+      "expected_index": "3653888820",
+      "centroid_lat": "19.0751081579",
+      "centroid_lon": "72.8789067838",
+      "base_face": 0
+    },
+    {
+      "name": "Mumbai",
+      "input_lat": "19.076",
+      "input_lon": "72.8777",
+      "resolution": 20,
+      "expected_index": "3741582154065",
+      "centroid_lat": "19.0760416882",
+      "centroid_lon": "72.8777264232",
+      "base_face": 0
+    },
+    {
+      "name": "Mumbai",
+      "input_lat": "19.076",
+      "input_lon": "72.8777",
+      "resolution": 24,
+      "expected_index": "957845031441073",
+      "centroid_lat": "19.0759960246",
+      "centroid_lon": "72.8777019486",
+      "base_face": 0
+    },
+    {
+      "name": "Mexico City",
+      "input_lat": "19.4326",
+      "input_lon": "-99.1332",
+      "resolution": 5,
+      "expected_index": "5512",
+      "centroid_lat": "19.3742308629",
+      "centroid_lon": "-98.3571441212",
+      "base_face": 2
+    },
+    {
+      "name": "Mexico City",
+      "input_lat": "19.4326",
+      "input_lon": "-99.1332",
+      "resolution": 10,
+      "expected_index": "5646568",
+      "centroid_lat": "19.4517135309",
+      "centroid_lon": "-99.1680165862",
+      "base_face": 2
+    },
+    {
+      "name": "Mexico City",
+      "input_lat": "19.4326",
+      "input_lon": "-99.1332",
+      "resolution": 15,
+      "expected_index": "5782087985",
+      "centroid_lat": "19.4323727231",
+      "centroid_lon": "-99.1335719702",
+      "base_face": 2
+    },
+    {
+      "name": "Mexico City",
+      "input_lat": "19.4326",
+      "input_lon": "-99.1332",
+      "resolution": 20,
+      "expected_index": "5920858099210",
+      "centroid_lat": "19.4326221075",
+      "centroid_lon": "-99.1332058987",
+      "base_face": 2
+    },
+    {
+      "name": "Mexico City",
+      "input_lat": "19.4326",
+      "input_lon": "-99.1332",
+      "resolution": 24,
+      "expected_index": "1515739673398205",
+      "centroid_lat": "19.4325976688",
+      "centroid_lon": "-99.1331972158",
+      "base_face": 2
+    },
+    {
+      "name": "Beijing",
+      "input_lat": "39.9042",
+      "input_lon": "116.4074",
+      "resolution": 5,
+      "expected_index": "4706",
+      "centroid_lat": "39.6221004409",
+      "centroid_lon": "116.201274362",
+      "base_face": 1
+    },
+    {
+      "name": "Beijing",
+      "input_lat": "39.9042",
+      "input_lon": "116.4074",
+      "resolution": 10,
+      "expected_index": "4821619",
+      "centroid_lat": "39.8578965309",
+      "centroid_lon": "116.3937602253",
+      "base_face": 1
+    },
+    {
+      "name": "Beijing",
+      "input_lat": "39.9042",
+      "input_lon": "116.4074",
+      "resolution": 15,
+      "expected_index": "4937339691",
+      "centroid_lat": "39.9033422401",
+      "centroid_lon": "116.4076024921",
+      "base_face": 1
+    },
+    {
+      "name": "Beijing",
+      "input_lat": "39.9042",
+      "input_lon": "116.4074",
+      "resolution": 20,
+      "expected_index": "5055835845494",
+      "centroid_lat": "39.9041658044",
+      "centroid_lon": "116.4073746555",
+      "base_face": 1
+    },
+    {
+      "name": "Beijing",
+      "input_lat": "39.9042",
+      "input_lon": "116.4074",
+      "resolution": 24,
+      "expected_index": "1294293976446929",
+      "centroid_lat": "39.9041991255",
+      "centroid_lon": "116.4073974263",
+      "base_face": 1
+    },
+    {
+      "name": "Buenos Aires",
+      "input_lat": "-34.6037",
+      "input_lon": "-58.3816",
+      "resolution": 5,
+      "expected_index": "10891",
+      "centroid_lat": "-33.4383442535",
+      "centroid_lon": "-57.9050726671",
+      "base_face": 7
+    },
+    {
+      "name": "Buenos Aires",
+      "input_lat": "-34.6037",
+      "input_lon": "-58.3816",
+      "resolution": 10,
+      "expected_index": "11154300",
+      "centroid_lat": "-34.6344416988",
+      "centroid_lon": "-58.4388023825",
+      "base_face": 7
+    },
+    {
+      "name": "Buenos Aires",
+      "input_lat": "-34.6037",
+      "input_lon": "-58.3816",
+      "resolution": 15,
+      "expected_index": "11422005269",
+      "centroid_lat": "-34.6030355501",
+      "centroid_lon": "-58.3823785614",
+      "base_face": 7
+    },
+    {
+      "name": "Buenos Aires",
+      "input_lat": "-34.6037",
+      "input_lon": "-58.3816",
+      "resolution": 20,
+      "expected_index": "11696133397899",
+      "centroid_lat": "-34.6036711964",
+      "centroid_lon": "-58.3816213256",
+      "base_face": 7
+    },
+    {
+      "name": "Buenos Aires",
+      "input_lat": "-34.6037",
+      "input_lon": "-58.3816",
+      "resolution": 24,
+      "expected_index": "2994210149862589",
+      "centroid_lat": "-34.6037017726",
+      "centroid_lon": "-58.3815971179",
+      "base_face": 7
+    },
+    {
+      "name": "Lagos",
+      "input_lat": "6.5244",
+      "input_lon": "3.3792",
+      "resolution": 5,
+      "expected_index": "3067",
+      "centroid_lat": "6.5879230678",
+      "centroid_lon": "3.7951513339",
+      "base_face": 0
+    },
+    {
+      "name": "Lagos",
+      "input_lat": "6.5244",
+      "input_lon": "3.3792",
+      "resolution": 10,
+      "expected_index": "3142614",
+      "centroid_lat": "6.4982547187",
+      "centroid_lon": "3.3497729563",
+      "base_face": 0
+    },
+    {
+      "name": "Lagos",
+      "input_lat": "6.5244",
+      "input_lon": "3.3792",
+      "resolution": 15,
+      "expected_index": "3218038781",
+      "centroid_lat": "6.5240323938",
+      "centroid_lon": "3.3786946514",
+      "base_face": 0
+    },
+    {
+      "name": "Lagos",
+      "input_lat": "6.5244",
+      "input_lon": "3.3792",
+      "resolution": 20,
+      "expected_index": "3295271713948",
+      "centroid_lat": "6.5243781472",
+      "centroid_lon": "3.3792184404",
+      "base_face": 0
+    },
+    {
+      "name": "Lagos",
+      "input_lat": "6.5244",
+      "input_lon": "3.3792",
+      "resolution": 24,
+      "expected_index": "843589558771137",
+      "centroid_lat": "6.5243995678",
+      "centroid_lon": "3.3792023434",
+      "base_face": 0
+    },
+    {
+      "name": "Nairobi",
+      "input_lat": "-1.2921",
+      "input_lon": "36.8219",
+      "resolution": 5,
+      "expected_index": "7426",
+      "centroid_lat": "-1.0177702089",
+      "centroid_lon": "37.7046189283",
+      "base_face": 4
+    },
+    {
+      "name": "Nairobi",
+      "input_lat": "-1.2921",
+      "input_lon": "36.8219",
+      "resolution": 10,
+      "expected_index": "7606449",
+      "centroid_lat": "-1.2720878443",
+      "centroid_lon": "36.8471323333",
+      "base_face": 4
+    },
+    {
+      "name": "Nairobi",
+      "input_lat": "-1.2921",
+      "input_lon": "36.8219",
+      "resolution": 15,
+      "expected_index": "7789005649",
+      "centroid_lat": "-1.2919603512",
+      "centroid_lon": "36.8227315962",
+      "base_face": 4
+    },
+    {
+      "name": "Nairobi",
+      "input_lat": "-1.2921",
+      "input_lon": "36.8219",
+      "resolution": 20,
+      "expected_index": "7975941786803",
+      "centroid_lat": "-1.2921155152",
+      "centroid_lon": "36.821875532",
+      "base_face": 4
+    },
+    {
+      "name": "Nairobi",
+      "input_lat": "-1.2921",
+      "input_lon": "36.8219",
+      "resolution": 24,
+      "expected_index": "2041841097422109",
+      "centroid_lat": "-1.2920999901",
+      "centroid_lon": "36.8218956685",
+      "base_face": 4
+    },
+    {
+      "name": "Bangkok",
+      "input_lat": "13.7563",
+      "input_lon": "100.5018",
+      "resolution": 5,
+      "expected_index": "4233",
+      "centroid_lat": "13.4413833115",
+      "centroid_lon": "100.8881691609",
+      "base_face": 1
+    },
+    {
+      "name": "Bangkok",
+      "input_lat": "13.7563",
+      "input_lon": "100.5018",
+      "resolution": 10,
+      "expected_index": "4337087",
+      "centroid_lat": "13.6971935427",
+      "centroid_lon": "100.5265428322",
+      "base_face": 1
+    },
+    {
+      "name": "Bangkok",
+      "input_lat": "13.7563",
+      "input_lon": "100.5018",
+      "resolution": 15,
+      "expected_index": "4441178793",
+      "centroid_lat": "13.7569842341",
+      "centroid_lon": "100.5016162204",
+      "base_face": 1
+    },
+    {
+      "name": "Bangkok",
+      "input_lat": "13.7563",
+      "input_lon": "100.5018",
+      "resolution": 20,
+      "expected_index": "4547767086516",
+      "centroid_lat": "13.7563125719",
+      "centroid_lon": "100.5017964877",
+      "base_face": 1
+    },
+    {
+      "name": "Bangkok",
+      "input_lat": "13.7563",
+      "input_lon": "100.5018",
+      "resolution": 24,
+      "expected_index": "1164228374148721",
+      "centroid_lat": "13.7562969618",
+      "centroid_lon": "100.5017967582",
+      "base_face": 1
+    },
+    {
+      "name": "Berlin",
+      "input_lat": "52.52",
+      "input_lon": "13.405",
+      "resolution": 5,
+      "expected_index": "2820",
+      "centroid_lat": "51.9666519355",
+      "centroid_lon": "13.2970221532",
+      "base_face": 0
+    },
+    {
+      "name": "Berlin",
+      "input_lat": "52.52",
+      "input_lon": "13.405",
+      "resolution": 10,
+      "expected_index": "2889779",
+      "centroid_lat": "52.4849041192",
+      "centroid_lon": "13.3454268566",
+      "base_face": 0
+    },
+    {
+      "name": "Berlin",
+      "input_lat": "52.52",
+      "input_lon": "13.405",
+      "resolution": 15,
+      "expected_index": "2959135779",
+      "centroid_lat": "52.519652036",
+      "centroid_lon": "13.4055438906",
+      "base_face": 0
+    },
+    {
+      "name": "Berlin",
+      "input_lat": "52.52",
+      "input_lon": "13.405",
+      "resolution": 20,
+      "expected_index": "3030155039505",
+      "centroid_lat": "52.5200065761",
+      "centroid_lon": "13.4049770851",
+      "base_face": 0
+    },
+    {
+      "name": "Berlin",
+      "input_lat": "52.52",
+      "input_lon": "13.405",
+      "resolution": 24,
+      "expected_index": "775719690113849",
+      "centroid_lat": "52.5200051362",
+      "centroid_lon": "13.4050057883",
+      "base_face": 0
+    },
+    {
+      "name": "Rome",
+      "input_lat": "41.9028",
+      "input_lon": "12.4964",
+      "resolution": 5,
+      "expected_index": "3660",
+      "centroid_lat": "39.8409569827",
+      "centroid_lon": "13.3874816651",
+      "base_face": 0
+    },
+    {
+      "name": "Rome",
+      "input_lat": "41.9028",
+      "input_lon": "12.4964",
+      "resolution": 10,
+      "expected_index": "3749546",
+      "centroid_lat": "41.9192301169",
+      "centroid_lon": "12.4974689178",
+      "base_face": 0
+    },
+    {
+      "name": "Rome",
+      "input_lat": "41.9028",
+      "input_lon": "12.4964",
+      "resolution": 15,
+      "expected_index": "3839537623",
+      "centroid_lat": "41.9023299875",
+      "centroid_lon": "12.4966009803",
+      "base_face": 0
+    },
+    {
+      "name": "Rome",
+      "input_lat": "41.9028",
+      "input_lon": "12.4964",
+      "resolution": 20,
+      "expected_index": "3931686528617",
+      "centroid_lat": "41.9028166731",
+      "centroid_lon": "12.496404803",
+      "base_face": 0
+    },
+    {
+      "name": "Rome",
+      "input_lat": "41.9028",
+      "input_lon": "12.4964",
+      "resolution": 24,
+      "expected_index": "1006511751326577",
+      "centroid_lat": "41.9027961162",
+      "centroid_lon": "12.4964030894",
+      "base_face": 0
+    },
+    {
+      "name": "North Pole",
+      "input_lat": "89.9999",
+      "input_lon": "0",
+      "resolution": 5,
+      "expected_index": "2729",
+      "centroid_lat": "88.6738789135",
+      "centroid_lon": "45",
+      "base_face": 0
+    },
+    {
+      "name": "North Pole",
+      "input_lat": "89.9999",
+      "input_lon": "0",
+      "resolution": 10,
+      "expected_index": "2796201",
+      "centroid_lat": "89.958567953",
+      "centroid_lon": "45",
+      "base_face": 0
+    },
+    {
+      "name": "North Pole",
+      "input_lat": "89.9999",
+      "input_lon": "0",
+      "resolution": 15,
+      "expected_index": "2863311529",
+      "centroid_lat": "89.9987052487",
+      "centroid_lon": "45",
+      "base_face": 0
+    },
+    {
+      "name": "North Pole",
+      "input_lat": "89.9999",
+      "input_lon": "0",
+      "resolution": 20,
+      "expected_index": "2932031007402",
+      "centroid_lat": "89.9998820401",
+      "centroid_lon": "14.0362434679",
+      "base_face": 0
+    },
+    {
+      "name": "North Pole",
+      "input_lat": "89.9999",
+      "input_lon": "0",
+      "resolution": 24,
+      "expected_index": "750599937895341",
+      "centroid_lat": "89.999901638",
+      "centroid_lon": "1.041626676",
+      "base_face": 0
+    },
+    {
+      "name": "South Pole",
+      "input_lat": "-89.9999",
+      "input_lon": "0",
+      "resolution": 5,
+      "expected_index": "6825",
+      "centroid_lat": "-88.6738789135",
+      "centroid_lon": "45",
+      "base_face": 4
+    },
+    {
+      "name": "South Pole",
+      "input_lat": "-89.9999",
+      "input_lon": "0",
+      "resolution": 10,
+      "expected_index": "6990505",
+      "centroid_lat": "-89.958567953",
+      "centroid_lon": "45",
+      "base_face": 4
+    },
+    {
+      "name": "South Pole",
+      "input_lat": "-89.9999",
+      "input_lon": "0",
+      "resolution": 15,
+      "expected_index": "7158278825",
+      "centroid_lat": "-89.9987052487",
+      "centroid_lon": "45",
+      "base_face": 4
+    },
+    {
+      "name": "South Pole",
+      "input_lat": "-89.9999",
+      "input_lon": "0",
+      "resolution": 20,
+      "expected_index": "7330077518507",
+      "centroid_lat": "-89.9998820401",
+      "centroid_lon": "14.0362434679",
+      "base_face": 4
+    },
+    {
+      "name": "South Pole",
+      "input_lat": "-89.9999",
+      "input_lon": "0",
+      "resolution": 24,
+      "expected_index": "1876499844738225",
+      "centroid_lat": "-89.999901638",
+      "centroid_lon": "1.041626676",
+      "base_face": 4
+    },
+    {
+      "name": "Equator-PrimeMeridian",
+      "input_lat": "0",
+      "input_lon": "0",
+      "resolution": 5,
+      "expected_index": "3070",
+      "centroid_lat": "0.9376673481",
+      "centroid_lon": "0.9377929391",
+      "base_face": 0
+    },
+    {
+      "name": "Equator-PrimeMeridian",
+      "input_lat": "0",
+      "input_lon": "0",
+      "resolution": 10,
+      "expected_index": "3145726",
+      "centroid_lat": "0.0292968801",
+      "centroid_lon": "0.0292968839",
+      "base_face": 0
+    },
+    {
+      "name": "Equator-PrimeMeridian",
+      "input_lat": "0",
+      "input_lon": "0",
+      "resolution": 15,
+      "expected_index": "3221225470",
+      "centroid_lat": "0.0009155273",
+      "centroid_lon": "0.0009155273",
+      "base_face": 0
+    },
+    {
+      "name": "Equator-PrimeMeridian",
+      "input_lat": "0",
+      "input_lon": "0",
+      "resolution": 20,
+      "expected_index": "3298534883326",
+      "centroid_lat": "2.86102E-05",
+      "centroid_lon": "2.86102E-05",
+      "base_face": 0
+    },
+    {
+      "name": "Equator-PrimeMeridian",
+      "input_lat": "0",
+      "input_lon": "0",
+      "resolution": 24,
+      "expected_index": "844424930131965",
+      "centroid_lat": "7.1526E-06",
+      "centroid_lon": "1.7881E-06",
+      "base_face": 0
+    },
+    {
+      "name": "Equator-90E",
+      "input_lat": "0",
+      "input_lon": "90",
+      "resolution": 5,
+      "expected_index": "4094",
+      "centroid_lat": "0.9376673481",
+      "centroid_lon": "90.9377929391",
+      "base_face": 1
+    },
+    {
+      "name": "Equator-90E",
+      "input_lat": "0",
+      "input_lon": "90",
+      "resolution": 10,
+      "expected_index": "4194302",
+      "centroid_lat": "0.0292968801",
+      "centroid_lon": "90.0292968839",
+      "base_face": 1
+    },
+    {
+      "name": "Equator-90E",
+      "input_lat": "0",
+      "input_lon": "90",
+      "resolution": 15,
+      "expected_index": "4294967294",
+      "centroid_lat": "0.0009155273",
+      "centroid_lon": "90.0009155273",
+      "base_face": 1
+    },
+    {
+      "name": "Equator-90E",
+      "input_lat": "0",
+      "input_lon": "90",
+      "resolution": 20,
+      "expected_index": "4398046511102",
+      "centroid_lat": "2.86102E-05",
+      "centroid_lon": "90.0000286102",
+      "base_face": 1
+    },
+    {
+      "name": "Equator-90E",
+      "input_lat": "0",
+      "input_lon": "90",
+      "resolution": 24,
+      "expected_index": "1125899906842621",
+      "centroid_lat": "7.1526E-06",
+      "centroid_lon": "90.0000017881",
+      "base_face": 1
+    },
+    {
+      "name": "Equator-180",
+      "input_lat": "0",
+      "input_lon": "180",
+      "resolution": 5,
+      "expected_index": "5118",
+      "centroid_lat": "0.9376673481",
+      "centroid_lon": "-179.0622070609",
+      "base_face": 2
+    },
+    {
+      "name": "Equator-180",
+      "input_lat": "0",
+      "input_lon": "180",
+      "resolution": 10,
+      "expected_index": "5242878",
+      "centroid_lat": "0.0292968801",
+      "centroid_lon": "-179.9707031161",
+      "base_face": 2
+    },
+    {
+      "name": "Equator-180",
+      "input_lat": "0",
+      "input_lon": "180",
+      "resolution": 15,
+      "expected_index": "5368709118",
+      "centroid_lat": "0.0009155273",
+      "centroid_lon": "-179.9990844727",
+      "base_face": 2
+    },
+    {
+      "name": "Equator-180",
+      "input_lat": "0",
+      "input_lon": "180",
+      "resolution": 20,
+      "expected_index": "5497558138878",
+      "centroid_lat": "2.86102E-05",
+      "centroid_lon": "-179.9999713898",
+      "base_face": 2
+    },
+    {
+      "name": "Equator-180",
+      "input_lat": "0",
+      "input_lon": "180",
+      "resolution": 24,
+      "expected_index": "1407374883553277",
+      "centroid_lat": "7.1526E-06",
+      "centroid_lon": "-179.9999982119",
+      "base_face": 2
+    },
+    {
+      "name": "Equator-90W",
+      "input_lat": "0",
+      "input_lon": "-90",
+      "resolution": 5,
+      "expected_index": "6142",
+      "centroid_lat": "0.9376673481",
+      "centroid_lon": "-89.0622070609",
+      "base_face": 3
+    },
+    {
+      "name": "Equator-90W",
+      "input_lat": "0",
+      "input_lon": "-90",
+      "resolution": 10,
+      "expected_index": "6291454",
+      "centroid_lat": "0.0292968801",
+      "centroid_lon": "-89.9707031161",
+      "base_face": 3
+    },
+    {
+      "name": "Equator-90W",
+      "input_lat": "0",
+      "input_lon": "-90",
+      "resolution": 15,
+      "expected_index": "6442450942",
+      "centroid_lat": "0.0009155273",
+      "centroid_lon": "-89.9990844727",
+      "base_face": 3
+    },
+    {
+      "name": "Equator-90W",
+      "input_lat": "0",
+      "input_lon": "-90",
+      "resolution": 20,
+      "expected_index": "6597069766654",
+      "centroid_lat": "2.86102E-05",
+      "centroid_lon": "-89.9999713898",
+      "base_face": 3
+    },
+    {
+      "name": "Equator-90W",
+      "input_lat": "0",
+      "input_lon": "-90",
+      "resolution": 24,
+      "expected_index": "1688849860263933",
+      "centroid_lat": "7.1526E-06",
+      "centroid_lon": "-89.9999982119",
+      "base_face": 3
+    },
+    {
+      "name": "Antimeridian-North",
+      "input_lat": "45",
+      "input_lon": "179.9999",
+      "resolution": 5,
+      "expected_index": "4606",
+      "centroid_lat": "44.9636332018",
+      "centroid_lon": "177.1136299172",
+      "base_face": 1
+    },
+    {
+      "name": "Antimeridian-North",
+      "input_lat": "45",
+      "input_lon": "179.9999",
+      "resolution": 10,
+      "expected_index": "4718590",
+      "centroid_lat": "44.9999644912",
+      "centroid_lon": "179.9097890321",
+      "base_face": 1
+    },
+    {
+      "name": "Antimeridian-North",
+      "input_lat": "45",
+      "input_lon": "179.9999",
+      "resolution": 15,
+      "expected_index": "4831838206",
+      "centroid_lat": "44.9999999653",
+      "centroid_lon": "179.9971809069",
+      "base_face": 1
+    },
+    {
+      "name": "Antimeridian-North",
+      "input_lat": "45",
+      "input_lon": "179.9999",
+      "resolution": 20,
+      "expected_index": "4947802324990",
+      "centroid_lat": "45",
+      "centroid_lon": "179.9999119033",
+      "base_face": 1
+    },
+    {
+      "name": "Antimeridian-North",
+      "input_lat": "45",
+      "input_lon": "179.9999",
+      "resolution": 24,
+      "expected_index": "1266637395198075",
+      "centroid_lat": "45.0000041295",
+      "centroid_lon": "179.9998981382",
+      "base_face": 1
+    },
+    {
+      "name": "Antimeridian-South",
+      "input_lat": "-45",
+      "input_lon": "-179.9999",
+      "resolution": 5,
+      "expected_index": "9726",
+      "centroid_lat": "-44.9636332018",
+      "centroid_lon": "-177.1136299172",
+      "base_face": 6
+    },
+    {
+      "name": "Antimeridian-South",
+      "input_lat": "-45",
+      "input_lon": "-179.9999",
+      "resolution": 10,
+      "expected_index": "9961470",
+      "centroid_lat": "-44.9999644912",
+      "centroid_lon": "-179.9097890321",
+      "base_face": 6
+    },
+    {
+      "name": "Antimeridian-South",
+      "input_lat": "-45",
+      "input_lon": "-179.9999",
+      "resolution": 15,
+      "expected_index": "10200547326",
+      "centroid_lat": "-44.9999999653",
+      "centroid_lon": "-179.9971809069",
+      "base_face": 6
+    },
+    {
+      "name": "Antimeridian-South",
+      "input_lat": "-45",
+      "input_lon": "-179.9999",
+      "resolution": 20,
+      "expected_index": "10445360463870",
+      "centroid_lat": "-45",
+      "centroid_lon": "-179.9999119033",
+      "base_face": 6
+    },
+    {
+      "name": "Antimeridian-South",
+      "input_lat": "-45",
+      "input_lon": "-179.9999",
+      "resolution": 24,
+      "expected_index": "2674012278751355",
+      "centroid_lat": "-45.0000041295",
+      "centroid_lon": "-179.9998981382",
+      "base_face": 6
+    },
+    {
+      "name": "Arctic Circle",
+      "input_lat": "66.5",
+      "input_lon": "25",
+      "resolution": 5,
+      "expected_index": "2956",
+      "centroid_lat": "65.9481114394",
+      "centroid_lon": "25.1734896421",
+      "base_face": 0
+    },
+    {
+      "name": "Arctic Circle",
+      "input_lat": "66.5",
+      "input_lon": "25",
+      "resolution": 10,
+      "expected_index": "3028842",
+      "centroid_lat": "66.464151377",
+      "centroid_lon": "24.9203780452",
+      "base_face": 0
+    },
+    {
+      "name": "Arctic Circle",
+      "input_lat": "66.5",
+      "input_lon": "25",
+      "resolution": 15,
+      "expected_index": "3101536272",
+      "centroid_lat": "66.500264648",
+      "centroid_lon": "25.0025632425",
+      "base_face": 0
+    },
+    {
+      "name": "Arctic Circle",
+      "input_lat": "66.5",
+      "input_lon": "25",
+      "resolution": 20,
+      "expected_index": "3175973144546",
+      "centroid_lat": "66.4999963456",
+      "centroid_lon": "25.0000855021",
+      "base_face": 0
+    },
+    {
+      "name": "Arctic Circle",
+      "input_lat": "66.5",
+      "input_lon": "25",
+      "resolution": 24,
+      "expected_index": "813049125004378",
+      "centroid_lat": "66.5000010205",
+      "centroid_lon": "24.9999925018",
+      "base_face": 0
+    },
+    {
+      "name": "Antarctic Circle",
+      "input_lat": "-66.5",
+      "input_lon": "170",
+      "resolution": 5,
+      "expected_index": "7915",
+      "centroid_lat": "-65.6069574284",
+      "centroid_lon": "170.2255875624",
+      "base_face": 5
+    },
+    {
+      "name": "Antarctic Circle",
+      "input_lat": "-66.5",
+      "input_lon": "170",
+      "resolution": 10,
+      "expected_index": "8106801",
+      "centroid_lat": "-66.5153824934",
+      "centroid_lon": "169.9501765609",
+      "base_face": 5
+    },
+    {
+      "name": "Antarctic Circle",
+      "input_lat": "-66.5",
+      "input_lon": "170",
+      "resolution": 15,
+      "expected_index": "8301366224",
+      "centroid_lat": "-66.4992507375",
+      "centroid_lon": "170.0015010904",
+      "base_face": 5
+    },
+    {
+      "name": "Antarctic Circle",
+      "input_lat": "-66.5",
+      "input_lon": "170",
+      "resolution": 20,
+      "expected_index": "8500599015592",
+      "centroid_lat": "-66.5000008769",
+      "centroid_lon": "169.9999555302",
+      "base_face": 5
+    },
+    {
+      "name": "Antarctic Circle",
+      "input_lat": "-66.5",
+      "input_lon": "170",
+      "resolution": 24,
+      "expected_index": "2176153347992121",
+      "centroid_lat": "-66.5000010312",
+      "centroid_lon": "169.9999992527",
+      "base_face": 5
+    },
+    {
+      "name": "Helsinki-Res30",
+      "input_lat": "60.1699",
+      "input_lon": "24.9384",
+      "resolution": 30,
+      "expected_index": "3205439457919482537",
+      "centroid_lat": "60.1698952228",
+      "centroid_lon": "24.9384022012",
+      "base_face": 0
+    },
+    {
+      "name": "Equator-Res30",
+      "input_lat": "0",
+      "input_lon": "0",
+      "resolution": 30,
+      "expected_index": "3458764513820535465",
+      "centroid_lat": "1.0673E-05",
+      "centroid_lon": "2.79E-08",
+      "base_face": 0
+    },
+    {
+      "name": "Sydney-Res30",
+      "input_lat": "-33.8688",
+      "input_lon": "151.2093",
+      "resolution": 30,
+      "expected_index": "9853351969874967209",
+      "centroid_lat": "-33.8687940811",
+      "centroid_lon": "151.2093029284",
+      "base_face": 5
+    }
+  ],
+  "neighbors": [
+    {
+      "description": "Same-face neighbors at resolution 1",
+      "center_index": "9",
+      "resolution": 1,
+      "base_face": 0,
+      "neighbor_count": 3,
+      "neighbor_indices": [
+        "21",
+        "12",
+        "13"
+      ]
+    },
+    {
+      "description": "Same-face neighbors at resolution 2",
+      "center_index": "44",
+      "resolution": 2,
+      "base_face": 0,
+      "neighbor_count": 3,
+      "neighbor_indices": [
+        "43",
+        "41",
+        "42"
+      ]
+    },
+    {
+      "description": "Same-face neighbors at resolution 5",
+      "center_index": "2936",
+      "resolution": 5,
+      "base_face": 0,
+      "neighbor_count": 3,
+      "neighbor_indices": [
+        "2935",
+        "2933",
+        "2934"
+      ]
+    },
+    {
+      "description": "Same-face neighbors at resolution 10",
+      "center_index": "3008409",
+      "resolution": 10,
+      "base_face": 0,
+      "neighbor_count": 3,
+      "neighbor_indices": [
+        "3008398",
+        "3008412",
+        "3008387"
+      ]
+    },
+    {
+      "description": "Same-face neighbors at resolution 15",
+      "center_index": "3080613340",
+      "resolution": 15,
+      "base_face": 0,
+      "neighbor_count": 3,
+      "neighbor_indices": [
+        "3080613339",
+        "3080613337",
+        "3080613338"
+      ]
+    },
+    {
+      "description": "Equator face boundary (0-90E)",
+      "center_index": "3582696",
+      "resolution": 10,
+      "base_face": 0,
+      "crosses_face_boundary": false,
+      "neighbor_count": 3,
+      "neighbor_indices": [
+        "3582695",
+        "3582693",
+        "3582694"
+      ],
+      "neighbor_faces": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "description": "Equator face boundary (90-180E)",
+      "center_index": "4631272",
+      "resolution": 10,
+      "base_face": 1,
+      "crosses_face_boundary": false,
+      "neighbor_count": 3,
+      "neighbor_indices": [
+        "4631271",
+        "4631269",
+        "4631270"
+      ],
+      "neighbor_faces": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "description": "Equator face boundary (0-90W)",
+      "center_index": "6728424",
+      "resolution": 10,
+      "base_face": 3,
+      "crosses_face_boundary": false,
+      "neighbor_count": 3,
+      "neighbor_indices": [
+        "6728423",
+        "6728421",
+        "6728422"
+      ],
+      "neighbor_faces": [
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "description": "Equator face boundary (90-180W)",
+      "center_index": "5679848",
+      "resolution": 10,
+      "base_face": 2,
+      "crosses_face_boundary": false,
+      "neighbor_count": 3,
+      "neighbor_indices": [
+        "5679847",
+        "5679845",
+        "5679846"
+      ],
+      "neighbor_faces": [
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "description": "Near north pole",
+      "center_index": "2729",
+      "resolution": 5,
+      "base_face": 0,
+      "crosses_face_boundary": true,
+      "neighbor_count": 3,
+      "neighbor_indices": [
+        "5801",
+        "2732",
+        "3753"
+      ],
+      "neighbor_faces": [
+        3,
+        0,
+        1
+      ]
+    },
+    {
+      "description": "Near south pole",
+      "center_index": "6825",
+      "resolution": 5,
+      "base_face": 4,
+      "crosses_face_boundary": true,
+      "neighbor_count": 3,
+      "neighbor_indices": [
+        "7849",
+        "6828",
+        "9897"
+      ],
+      "neighbor_faces": [
+        5,
+        4,
+        7
+      ]
+    },
+    {
+      "description": "Near antimeridian",
+      "center_index": "4718598",
+      "resolution": 10,
+      "base_face": 1,
+      "crosses_face_boundary": false,
+      "neighbor_count": 3,
+      "neighbor_indices": [
+        "4718593",
+        "4718587",
+        "4718600"
+      ],
+      "neighbor_faces": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "description": "Near prime meridian north",
+      "center_index": "3757399",
+      "resolution": 10,
+      "base_face": 0,
+      "crosses_face_boundary": false,
+      "neighbor_count": 3,
+      "neighbor_indices": [
+        "3757400",
+        "3757386",
+        "3757389"
+      ],
+      "neighbor_faces": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "description": "Near prime meridian south",
+      "center_index": "7864326",
+      "resolution": 10,
+      "base_face": 4,
+      "crosses_face_boundary": false,
+      "neighbor_count": 3,
+      "neighbor_indices": [
+        "7864321",
+        "7864315",
+        "7864328"
+      ],
+      "neighbor_faces": [
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "description": "GetNeighborsWithin distance=1 at res 10",
+      "center_index": "2895536",
+      "resolution": 10,
+      "distance": 1,
+      "result_count": 4,
+      "result_indices": [
+        "2895536",
+        "2895535",
+        "2895533",
+        "2895534"
+      ]
+    },
+    {
+      "description": "GetNeighborsWithin distance=2 at res 10",
+      "center_index": "2895536",
+      "resolution": 10,
+      "distance": 2,
+      "result_count": 10,
+      "result_indices": [
+        "2895536",
+        "2895535",
+        "2895533",
+        "2895534",
+        "2895586",
+        "2895541",
+        "2915322",
+        "2895543",
+        "2915321",
+        "2895587"
+      ]
+    },
+    {
+      "description": "GetNeighborsWithin distance=1 at res 5",
+      "center_index": "3070",
+      "resolution": 5,
+      "distance": 1,
+      "result_count": 4,
+      "result_indices": [
+        "3070",
+        "6483",
+        "7507",
+        "3072"
+      ]
+    },
+    {
+      "description": "GetNeighborsWithin distance=2 at res 5",
+      "center_index": "3070",
+      "resolution": 5,
+      "distance": 2,
+      "result_count": 9,
+      "result_indices": [
+        "3070",
+        "6483",
+        "7507",
+        "3072",
+        "6484",
+        "10238",
+        "7508",
+        "3071",
+        "3069"
+      ]
+    }
+  ],
+  "containment": [
+    {
+      "description": "Parent (res 0) contains child (res 1)",
+      "parent_index": "1",
+      "parent_resolution": 0,
+      "child_index": "9",
+      "child_resolution": 1,
+      "expected_contains": true
+    },
+    {
+      "description": "Parent (res 1) contains child (res 2)",
+      "parent_index": "9",
+      "parent_resolution": 1,
+      "child_index": "42",
+      "child_resolution": 2,
+      "expected_contains": true
+    },
+    {
+      "description": "Parent (res 5) contains child (res 6)",
+      "parent_index": "2826",
+      "parent_resolution": 5,
+      "child_index": "11309",
+      "child_resolution": 6,
+      "expected_contains": true
+    },
+    {
+      "description": "Parent (res 10) contains child (res 11)",
+      "parent_index": "2895536",
+      "parent_resolution": 10,
+      "child_index": "11582152",
+      "child_resolution": 11,
+      "expected_contains": true
+    },
+    {
+      "description": "Parent (res 15) contains child (res 16)",
+      "parent_index": "2965031347",
+      "parent_resolution": 15,
+      "child_index": "11860125396",
+      "child_resolution": 16,
+      "expected_contains": true
+    },
+    {
+      "description": "Parent (res 20) contains child (res 21)",
+      "parent_index": "3036192101962",
+      "parent_resolution": 20,
+      "child_index": "12144768407855",
+      "child_resolution": 21,
+      "expected_contains": true
+    },
+    {
+      "description": "Non-containment: different locations or lower resolution",
+      "parent_index": "2826",
+      "parent_resolution": 5,
+      "child_index": "35001",
+      "child_resolution": 6,
+      "expected_contains": false
+    },
+    {
+      "description": "Non-containment: different locations or lower resolution",
+      "parent_index": "2826",
+      "parent_resolution": 5,
+      "child_index": "175",
+      "child_resolution": 3,
+      "expected_contains": false
+    },
+    {
+      "description": "Non-containment: different locations or lower resolution",
+      "parent_index": "6893284",
+      "parent_resolution": 10,
+      "child_index": "19526361",
+      "child_resolution": 11,
+      "expected_contains": false
+    },
+    {
+      "description": "Non-containment: different locations or lower resolution",
+      "parent_index": "3070",
+      "parent_resolution": 5,
+      "child_index": "16382",
+      "child_resolution": 6,
+      "expected_contains": false
+    }
+  ]
+}

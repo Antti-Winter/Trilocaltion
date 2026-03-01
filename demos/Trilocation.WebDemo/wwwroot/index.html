@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trilocation Explorer</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; display: flex; height: 100vh; }
+#map { flex: 1; }
+#sidebar {
+  width: 380px; background: #1a1a2e; color: #e0e0e0; overflow-y: auto;
+  display: flex; flex-direction: column; border-left: 2px solid #16213e;
+}
+#sidebar h1 { font-size: 18px; padding: 16px; background: #16213e; text-align: center; letter-spacing: 1px; }
+#controls { padding: 16px; border-bottom: 1px solid #16213e; }
+#controls label { display: block; margin-bottom: 8px; font-size: 13px; color: #a0a0c0; }
+#controls input[type="range"] { width: 100%; margin: 4px 0 12px; }
+#res-value { color: #4fc3f7; font-weight: bold; font-size: 15px; }
+.btn-row { display: flex; gap: 6px; margin-bottom: 8px; flex-wrap: wrap; }
+.btn {
+  padding: 7px 12px; border: 1px solid #4fc3f7; background: transparent; color: #4fc3f7;
+  border-radius: 4px; cursor: pointer; font-size: 12px; transition: all 0.2s;
+}
+.btn:hover { background: #4fc3f7; color: #1a1a2e; }
+.btn:disabled { opacity: 0.3; cursor: not-allowed; }
+.btn.active { background: #4fc3f7; color: #1a1a2e; }
+.btn.danger { border-color: #ef5350; color: #ef5350; }
+.btn.danger:hover { background: #ef5350; color: #fff; }
+#info-panel { padding: 16px; flex: 1; }
+#info-panel h3 { color: #4fc3f7; font-size: 14px; margin-bottom: 10px; }
+.info-row { display: flex; justify-content: space-between; padding: 5px 0; border-bottom: 1px solid #16213e; font-size: 13px; }
+.info-label { color: #a0a0c0; }
+.info-value { color: #fff; font-family: 'Consolas', monospace; text-align: right; max-width: 200px; word-break: break-all; }
+.face-swatch { display: inline-block; width: 12px; height: 12px; border-radius: 2px; margin-right: 6px; vertical-align: middle; }
+#status { padding: 8px 16px; font-size: 11px; color: #666; border-top: 1px solid #16213e; }
+.no-selection { color: #666; font-style: italic; padding: 20px 0; text-align: center; }
+#distance-controls { display: none; margin-top: 8px; }
+#distance-controls label { display: inline; }
+#distance-slider { width: 120px; vertical-align: middle; }
+#dist-value { color: #4fc3f7; font-weight: bold; }
+.legend { padding: 16px; border-top: 1px solid #16213e; }
+.legend h4 { font-size: 12px; color: #a0a0c0; margin-bottom: 8px; }
+.legend-item { display: inline-flex; align-items: center; margin-right: 8px; margin-bottom: 4px; font-size: 11px; }
+</style>
+</head>
+<body>
+
+<div id="map"></div>
+
+<div id="sidebar">
+  <h1>TRILOCATION EXPLORER</h1>
+
+  <div id="controls">
+    <label>Resolution: <span id="res-value">10</span></label>
+    <input type="range" id="res-slider" min="0" max="15" value="10" />
+
+    <div class="btn-row">
+      <button class="btn" id="btn-viewport" title="Show all cells in viewport">Viewport Cells</button>
+      <button class="btn danger" id="btn-clear" title="Clear all layers">Clear</button>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn" id="btn-parent" disabled>Parent</button>
+      <button class="btn" id="btn-children" disabled>Children</button>
+      <button class="btn" id="btn-neighbors" disabled>Neighbors</button>
+      <button class="btn" id="btn-nearby" disabled>Nearby</button>
+    </div>
+
+    <div id="distance-controls">
+      <label>Distance: <span id="dist-value">2</span></label>
+      <input type="range" id="distance-slider" min="1" max="5" value="2" />
+    </div>
+  </div>
+
+  <div id="info-panel">
+    <p class="no-selection">Click on the map to select a cell</p>
+  </div>
+
+  <div class="legend">
+    <h4>Base Faces</h4>
+    <div id="legend-items"></div>
+  </div>
+
+  <div id="status">Ready</div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+(function() {
+  // Base face colors (8 distinct, colorblind-friendly)
+  var FACE_COLORS = [
+    '#e6194B', '#3cb44b', '#ffe119', '#4363d8',
+    '#f58231', '#911eb4', '#42d4f4', '#f032e6'
+  ];
+  var FACE_LABELS = [
+    'N 0-90E', 'N 90-180E', 'N 180-90W', 'N 90W-0',
+    'S 0-90E', 'S 90-180E', 'S 180-90W', 'S 90W-0'
+  ];
+
+  // State
+  var map;
+  var selectedIndex = null;
+  var selectedLayer = null;
+  var viewportLayer = null;
+  var neighborsLayer = null;
+  var childrenLayer = null;
+  var viewportActive = false;
+  var currentResolution = 10;
+  var viewportDebounceTimer = null;
+
+  // DOM refs
+  var resSlider = document.getElementById('res-slider');
+  var resValue = document.getElementById('res-value');
+  var btnViewport = document.getElementById('btn-viewport');
+  var btnClear = document.getElementById('btn-clear');
+  var btnParent = document.getElementById('btn-parent');
+  var btnChildren = document.getElementById('btn-children');
+  var btnNeighbors = document.getElementById('btn-neighbors');
+  var btnNearby = document.getElementById('btn-nearby');
+  var distControls = document.getElementById('distance-controls');
+  var distSlider = document.getElementById('distance-slider');
+  var distValue = document.getElementById('dist-value');
+  var infoPanel = document.getElementById('info-panel');
+  var statusEl = document.getElementById('status');
+
+  // Build legend
+  var legendEl = document.getElementById('legend-items');
+  for (var i = 0; i < 8; i++) {
+    var item = document.createElement('span');
+    item.className = 'legend-item';
+    item.innerHTML = '<span class="face-swatch" style="background:' + FACE_COLORS[i] + '"></span>' + FACE_LABELS[i];
+    legendEl.appendChild(item);
+  }
+
+  // Initialize map
+  map = L.map('map').setView([60.17, 24.94], 10);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors',
+    maxZoom: 19
+  }).addTo(map);
+
+  // Click handler
+  map.on('click', function(e) {
+    selectByLatLon(e.latlng.lat, e.latlng.lng, currentResolution);
+  });
+
+  // Move handler for viewport
+  map.on('moveend', function() {
+    if (viewportActive) {
+      debounceViewport();
+    }
+  });
+
+  // Resolution slider
+  resSlider.addEventListener('input', function() {
+    currentResolution = parseInt(this.value);
+    resValue.textContent = currentResolution;
+    if (selectedIndex) {
+      // Re-select at new resolution using centroid
+      var latEl = infoPanel.querySelector('[data-field="centroidLat"]');
+      var lonEl = infoPanel.querySelector('[data-field="centroidLon"]');
+      if (latEl && lonEl) {
+        selectByLatLon(parseFloat(latEl.textContent), parseFloat(lonEl.textContent), currentResolution);
+      }
+    }
+    if (viewportActive) {
+      debounceViewport();
+    }
+  });
+
+  // Distance slider
+  distSlider.addEventListener('input', function() {
+    distValue.textContent = this.value;
+  });
+
+  // Buttons
+  btnViewport.addEventListener('click', function() {
+    viewportActive = !viewportActive;
+    if (viewportActive) {
+      this.classList.add('active');
+      loadViewportCells();
+    } else {
+      this.classList.remove('active');
+      clearLayer('viewport');
+    }
+  });
+
+  btnClear.addEventListener('click', function() {
+    clearAll();
+  });
+
+  btnParent.addEventListener('click', function() {
+    if (selectedIndex) {
+      loadParent(selectedIndex);
+    }
+  });
+
+  btnChildren.addEventListener('click', function() {
+    if (selectedIndex) {
+      loadChildren(selectedIndex);
+    }
+  });
+
+  btnNeighbors.addEventListener('click', function() {
+    if (selectedIndex) {
+      loadNeighbors(selectedIndex);
+    }
+  });
+
+  btnNearby.addEventListener('click', function() {
+    if (!selectedIndex) return;
+    var dist = parseInt(distSlider.value);
+    if (distControls.style.display === 'none' || distControls.style.display === '') {
+      distControls.style.display = 'block';
+      return;
+    }
+    loadNearby(selectedIndex, dist);
+  });
+
+  // === API calls ===
+
+  function setStatus(msg) {
+    statusEl.textContent = msg;
+  }
+
+  function fetchJson(url) {
+    setStatus('Loading...');
+    return fetch(url).then(function(r) {
+      if (!r.ok) {
+        return r.json().then(function(err) {
+          throw new Error(err.error || ('HTTP ' + r.status));
+        });
+      }
+      return r.json();
+    }).then(function(data) {
+      setStatus('Ready');
+      return data;
+    }).catch(function(err) {
+      setStatus('Error: ' + err.message);
+      throw err;
+    });
+  }
+
+  function selectByLatLon(lat, lon, res) {
+    fetchJson('/api/cell?lat=' + lat + '&lon=' + lon + '&resolution=' + res)
+      .then(function(feature) {
+        showSelectedCell(feature);
+      }).catch(function() {});
+  }
+
+  function selectByIndex(idx) {
+    fetchJson('/api/cell?index=' + idx)
+      .then(function(feature) {
+        showSelectedCell(feature);
+      }).catch(function() {});
+  }
+
+  function showSelectedCell(feature) {
+    clearLayer('selected');
+    clearLayer('neighbors');
+    clearLayer('children');
+    distControls.style.display = 'none';
+
+    selectedIndex = feature.properties.index;
+
+    selectedLayer = L.geoJSON(feature, {
+      style: function(f) {
+        return {
+          color: FACE_COLORS[f.properties.baseFace],
+          weight: 3,
+          fillColor: FACE_COLORS[f.properties.baseFace],
+          fillOpacity: 0.4
+        };
+      }
+    }).addTo(map);
+
+    updateInfoPanel(feature.properties);
+    updateButtons(feature.properties);
+  }
+
+  function loadViewportCells() {
+    var b = map.getBounds();
+    var url = '/api/viewport?minLat=' + b.getSouth() +
+      '&maxLat=' + b.getNorth() +
+      '&minLon=' + b.getWest() +
+      '&maxLon=' + b.getEast() +
+      '&resolution=' + currentResolution;
+
+    fetchJson(url).then(function(fc) {
+      clearLayer('viewport');
+      viewportLayer = L.geoJSON(fc, {
+        style: function(f) {
+          return {
+            color: FACE_COLORS[f.properties.baseFace],
+            weight: 1,
+            fillColor: FACE_COLORS[f.properties.baseFace],
+            fillOpacity: 0.2
+          };
+        },
+        onEachFeature: function(feature, layer) {
+          layer.on('click', function(e) {
+            L.DomEvent.stopPropagation(e);
+            showSelectedCell(feature);
+          });
+        }
+      }).addTo(map);
+      setStatus(fc.features.length + ' cells loaded');
+    }).catch(function() {});
+  }
+
+  function loadParent(idx) {
+    fetchJson('/api/parent?index=' + idx)
+      .then(function(feature) {
+        showSelectedCell(feature);
+        map.fitBounds(L.geoJSON(feature).getBounds(), { padding: [50, 50] });
+      }).catch(function() {});
+  }
+
+  function loadChildren(idx) {
+    fetchJson('/api/children?index=' + idx)
+      .then(function(fc) {
+        clearLayer('children');
+        childrenLayer = L.geoJSON(fc, {
+          style: function(f) {
+            return {
+              color: '#fff',
+              weight: 2,
+              fillColor: FACE_COLORS[f.properties.baseFace],
+              fillOpacity: 0.5,
+              dashArray: '4 4'
+            };
+          },
+          onEachFeature: function(feature, layer) {
+            layer.on('click', function(e) {
+              L.DomEvent.stopPropagation(e);
+              showSelectedCell(feature);
+            });
+          }
+        }).addTo(map);
+        setStatus('4 children loaded');
+      }).catch(function() {});
+  }
+
+  function loadNeighbors(idx) {
+    fetchJson('/api/neighbors?index=' + idx)
+      .then(function(fc) {
+        clearLayer('neighbors');
+        neighborsLayer = L.geoJSON(fc, {
+          style: function() {
+            return {
+              color: '#ff9800',
+              weight: 2,
+              fillColor: '#ff9800',
+              fillOpacity: 0.3
+            };
+          },
+          onEachFeature: function(feature, layer) {
+            layer.on('click', function(e) {
+              L.DomEvent.stopPropagation(e);
+              showSelectedCell(feature);
+            });
+          }
+        }).addTo(map);
+        setStatus('3 neighbors loaded');
+      }).catch(function() {});
+  }
+
+  function loadNearby(idx, distance) {
+    fetchJson('/api/neighbors-within?index=' + idx + '&distance=' + distance)
+      .then(function(fc) {
+        clearLayer('neighbors');
+        neighborsLayer = L.geoJSON(fc, {
+          style: function(f) {
+            // Highlight selected cell differently
+            if (f.properties.index === selectedIndex) {
+              return {
+                color: '#fff',
+                weight: 3,
+                fillColor: '#4fc3f7',
+                fillOpacity: 0.5
+              };
+            }
+            return {
+              color: '#ff9800',
+              weight: 1,
+              fillColor: '#ff9800',
+              fillOpacity: 0.2
+            };
+          },
+          onEachFeature: function(feature, layer) {
+            layer.on('click', function(e) {
+              L.DomEvent.stopPropagation(e);
+              showSelectedCell(feature);
+            });
+          }
+        }).addTo(map);
+        setStatus(fc.features.length + ' cells within distance ' + distance);
+      }).catch(function() {});
+  }
+
+  // === UI helpers ===
+
+  function clearLayer(name) {
+    if (name === 'selected' && selectedLayer) { map.removeLayer(selectedLayer); selectedLayer = null; }
+    if (name === 'viewport' && viewportLayer) { map.removeLayer(viewportLayer); viewportLayer = null; }
+    if (name === 'neighbors' && neighborsLayer) { map.removeLayer(neighborsLayer); neighborsLayer = null; }
+    if (name === 'children' && childrenLayer) { map.removeLayer(childrenLayer); childrenLayer = null; }
+  }
+
+  function clearAll() {
+    clearLayer('selected');
+    clearLayer('viewport');
+    clearLayer('neighbors');
+    clearLayer('children');
+    selectedIndex = null;
+    viewportActive = false;
+    btnViewport.classList.remove('active');
+    distControls.style.display = 'none';
+    updateButtons(null);
+    infoPanel.innerHTML = '<p class="no-selection">Click on the map to select a cell</p>';
+    setStatus('Ready');
+  }
+
+  function updateButtons(props) {
+    var hasSelection = !!props;
+    btnNeighbors.disabled = !hasSelection;
+    btnNearby.disabled = !hasSelection;
+    btnParent.disabled = !hasSelection || props.resolution === 0;
+    btnChildren.disabled = !hasSelection || props.resolution >= 20;
+  }
+
+  function updateInfoPanel(props) {
+    var faceColor = FACE_COLORS[props.baseFace];
+    var areaStr = formatArea(props.areaKm2);
+
+    var html = '<h3>Cell Information</h3>';
+    html += infoRow('Index', props.index);
+    html += infoRow('Resolution', props.resolution);
+    html += infoRow('Base Face', '<span class="face-swatch" style="background:' + faceColor + '"></span>' + props.baseFace + ' (' + FACE_LABELS[props.baseFace] + ')');
+    html += infoRow('Area', areaStr);
+    html += infoRow('Centroid Lat', '<span data-field="centroidLat">' + props.centroidLat + '</span>');
+    html += infoRow('Centroid Lon', '<span data-field="centroidLon">' + props.centroidLon + '</span>');
+
+    if (props.parentIndex) {
+      html += infoRow('Parent', '<a href="#" onclick="window._selectIndex(\'' + props.parentIndex + '\');return false;" style="color:#4fc3f7">' + props.parentIndex + '</a>');
+    }
+
+    infoPanel.innerHTML = html;
+  }
+
+  function infoRow(label, value) {
+    return '<div class="info-row"><span class="info-label">' + label + '</span><span class="info-value">' + value + '</span></div>';
+  }
+
+  function formatArea(km2) {
+    if (km2 >= 1) {
+      return km2.toFixed(3) + ' km\u00B2';
+    }
+    var m2 = km2 * 1000000;
+    if (m2 >= 1) {
+      return m2.toFixed(2) + ' m\u00B2';
+    }
+    var cm2 = m2 * 10000;
+    return cm2.toFixed(2) + ' cm\u00B2';
+  }
+
+  function debounceViewport() {
+    if (viewportDebounceTimer) {
+      clearTimeout(viewportDebounceTimer);
+    }
+    viewportDebounceTimer = setTimeout(function() {
+      loadViewportCells();
+    }, 300);
+  }
+
+  // Expose for parent index links
+  window._selectIndex = function(idx) {
+    selectByIndex(idx);
+  };
+})();
+</script>
+</body>
+</html>
