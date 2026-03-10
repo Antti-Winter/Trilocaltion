@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <RootNamespace>Trilocation.WebDemo</RootNamespace>
+    <IsPackable>false</IsPackable>
   </PropertyGroup>
 
   <ItemGroup>

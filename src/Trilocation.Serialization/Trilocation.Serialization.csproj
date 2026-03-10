@@ -4,6 +4,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>Trilocation.Serialization</RootNamespace>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,6 +13,10 @@
 
   <ItemGroup>
     <InternalsVisibleTo Include="Trilocation.Serialization.Tests" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
 
 </Project>
